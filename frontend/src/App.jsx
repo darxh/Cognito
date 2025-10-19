@@ -8,7 +8,7 @@ function App() {
   const providerValues = {}; //pasiing values
   return (
     <div className="app">
-      <MyContext.Provider values={providerValues}>
+      <MyContext.Provider value={providerValues}>
         <Sidebar></Sidebar>
         <Chatwindow></Chatwindow>
       </MyContext.Provider>
