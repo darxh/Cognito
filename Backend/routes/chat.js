@@ -1,6 +1,7 @@
 import express from "express";
 const router = express.Router();
 import Thread from "../models/Thread.js";
+import getGeminiAPIResponse from "../utils/gemini.js";
 
 //test
 router.post("/test", async (req, res) => {
@@ -64,6 +65,51 @@ router.delete("/thread/:threadId", async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: "failed to delete this thread" });
+  }
+});
+
+router.post("/chat", async (req, res) => {
+  const { threadId, message } = req.body;
+
+  if (!threadId || !message) {
+    res.status(404).json({ error: "missing the required fields" });
+  }
+
+  try {
+    let thread = await Thread.findOne({ threadId });
+    if (!thread) {
+      //creating the new thread in database
+      thread = new Thread({
+        threadId,
+        title: message,
+        messages: [
+          {
+            role: "user",
+            content: message,
+          },
+        ],
+      });
+    } else {
+      thread.messages.push({
+        role: "user",
+        content: message,
+      });
+    }
+
+    const modelReply = await getGeminiAPIResponse(message);
+
+    thread.messages.push({
+      role: "model",
+      content: modelReply,
+    });
+    thread.updatedAt = new Date();
+
+    await thread.save();
+    res.json({ reply: modelReply });
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "something went wrong" });
   }
 });
 
