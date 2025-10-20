@@ -5,11 +5,15 @@ function Sidebar() {
   return (
     <div>
       <section className="sidebar">
+        
         {/* new chat button */}
         <button>
-          <img src="src/assets/blacklogo.png" alt="" />
-          <i className="fa-solid fa-pen-to-square"></i>
+          <img src="src/assets/blacklogo.png" className="logo" alt="logo" />
+          <span>
+            <i className="fa-solid fa-pen-to-square" id="new"></i>
+          </span>
         </button>
+
         {/* history */}
         <ul className="history">
           <li>history1</li>
