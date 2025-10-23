@@ -1,31 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
-
-:root {
-  --background-color: #131314;
-  --sidebar-color: #1e1f20;
-  --text-color: #e3e3e3;
-  --text-color-secondary: #9aa0a6;
-  --accent-color: #8ab4f8;
-  --input-background: #303134;
-  --border-color: #3c4043;
+*{
+  color: #ececec;
+  font-family: Roboto,'Open-Sans','Helvetica Neue','sans-serif';
 }
-
-html,
-body {
-  font-family: "Google Sans Text", sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 
 .app {
   background-color: #212121;
+  display: flex;
 }
+
+/* @import url("https://fonts.googleapis.com/css2?family=Google+Sans+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+:root {
+  --background-color: #212121;
+  --sidebar-color: #171717;
+  --text-color: #e3e3e3;
+  --text-secondary: #b4b4b4;
+  --border-color: rgba(255, 255, 255, 0.5);
+  --hover-color: rgba(180, 180, 180, 0.05);
+} */

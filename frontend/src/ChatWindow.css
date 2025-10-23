@@ -1,5 +1,16 @@
-.main{
-    background-color: bisque;
-    height: 100px;
-    width: 100px;
+.chatWindow {
+  background-color: #212121;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
