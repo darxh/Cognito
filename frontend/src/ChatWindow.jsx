@@ -8,8 +8,8 @@ function Chatwindow() {
         <span>
           Cognito<i class="fa-solid fa-angle-down"></i>
         </span>
-        <div className="userIcon">
-          <span>
+        <div className="userIconDiv">
+          <span className="userIcon">
             <i class="fa-solid fa-user"></i>
           </span>
         </div>
@@ -18,7 +18,7 @@ function Chatwindow() {
       <Chat />
 
       <div className="chatInput">
-        <div className="userInput">
+        <div className="inputBox">
           <input type="text" placeholder="Ask anything" />
           <div id="submit">
             <i class="fa-solid fa-paper-plane"></i>

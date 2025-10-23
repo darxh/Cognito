@@ -63,5 +63,5 @@ button:hover {
   margin: 10px;
   font-size: 1rem;
   text-align: center;
-  border-top: solid 1px rgba(180, 180, 180, 0.05);
+  border-top: solid rgba(180, 180, 180, 0.05);
 }
