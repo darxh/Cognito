@@ -7,8 +7,8 @@ import getGeminiAPIResponse from "../utils/gemini.js";
 router.post("/test", async (req, res) => {
   try {
     const thread = new Thread({
-      threadId: "914",
-      title: "Testing new Thread-4",
+      threadId: "9140",
+      title: "Testing new Thread-74",
     });
 
     const response = await thread.save();

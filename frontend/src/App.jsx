@@ -10,6 +10,8 @@ function App() {
   const [prompt, setPrompt] = useState("");
   const [reply, setReply] = useState(null);
   const [currThreadId, setCurrThreadId] = useState(uuid());
+  const [prevChats, setPrevChats] = useState([]); //storing all chats of curent thread
+  const [newChat, setNewChat] = useState(true);
 
   const providerValues = {
     prompt,
@@ -18,6 +20,10 @@ function App() {
     setReply,
     currThreadId,
     setCurrThreadId,
+    newChat,
+    setNewChat,
+    prevChats,
+    setPrevChats,
   }; //pasiing values
 
   return (
