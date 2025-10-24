@@ -18,15 +18,20 @@ function Sidebar() {
   const getAllthreads = async () => {
     try {
       const response = await fetch("http://localhost:8080/api/thread");
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const res = await response.json();
       const filteredData = res.map((thread) => ({
         threadId: thread.threadId,
         title: thread.title,
       }));
-      console.log(filteredData);
+      // console.log(filteredData);
       setAllThreads(filteredData);
     } catch (err) {
-      console.log(err);
+      console.error("Error fetching all threads:", err);
     }
   };
 
@@ -36,10 +41,33 @@ function Sidebar() {
 
   const createNewChat = () => {
     setNewChat(true);
-    setPrompt(" ");
+    setPrompt("");
     setReply(null);
     setCurrThreadId(uuidv1());
     setPrevChats([]);
+  };
+
+  const changethread = async (newthreadId) => {
+    setCurrThreadId(newthreadId);
+
+    try {
+      let response = await fetch(
+        `http://localhost:8080/api/thread/${newthreadId}`
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const res = await response.json();
+      console.log("Fetched messages for thread:", res);
+      setPrevChats(res);
+      setNewChat(false);
+      setReply(null);
+      setPrompt("");
+    } catch (err) {
+      console.error("Error fetching thread details:", err);
+    }
   };
 
   return (
@@ -54,7 +82,9 @@ function Sidebar() {
 
         <ul className="history">
           {allThreads?.map((thread, idx) => (
-            <li key={idx}>{thread.title}</li>
+            <li key={idx} onClick={() => changethread(thread.threadId)}>
+              {thread.title}
+            </li>
           ))}
         </ul>
 
