@@ -1,12 +1,37 @@
 import "./Chat.css";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { MyContext } from "./MyContext";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 
 function Chat() {
-  const { newChat, prevChats } = useContext(MyContext);
+  const { newChat, prevChats, reply } = useContext(MyContext);
+  const [latestReply, setLatestReply] = useState("");
+
+  useEffect(() => {
+    if (!reply) {
+      setLatestReply(""); 
+      return;
+    }
+
+    // if (!prevChats?.length) return;
+
+    const content = reply.split(" ");
+    let idx = 0;
+
+    const interval = setInterval(() => {
+      setLatestReply(content.slice(0, idx + 1).join(" "));
+
+      idx++;
+      if (idx >= content.length) {
+        clearTimeout(interval);
+      }
+    }, 40);
+
+    return () => clearInterval(interval);
+  }, [reply]);
+
   return (
     <>
       {newChat && <h1>Start a new chat!!</h1>}
@@ -25,6 +50,14 @@ function Chat() {
             )}
           </div>
         ))}
+
+        {prevChats.length > 0 && latestReply !== null && (
+          <div className="modelDiv" key={"typing"}>
+            <ReactMarkdown rehypePlugins={rehypeHighlight}>
+              {latestReply}
+            </ReactMarkdown>
+          </div>
+        )}
       </div>
     </>
   );
