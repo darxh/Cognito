@@ -18,6 +18,7 @@ function Chatwindow() {
   } = useContext(MyContext);
 
   const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const getReply = async () => {
     setLoading(true);
@@ -64,18 +65,37 @@ function Chatwindow() {
     setPrompt("");
   }, [reply]);
 
+  const handleProfileClick = () => {
+    setIsOpen(!isOpen)
+  };
+
   return (
     <div className="chatWindow">
       <div className="navbar">
         <span>
           Cognito<i className="fa-solid fa-angle-down"></i>
         </span>
-        <div className="userIconDiv">
+        <div className="userIconDiv" onClick={handleProfileClick}>
           <span className="userIcon">
             <i className="fa-solid fa-user"></i>
           </span>
         </div>
       </div>
+
+      {isOpen && (
+        <div className="dropDown">
+          {/* <div className="dropDownItem">user email here</div> */}
+          <div className="dropDownItem">
+            <i className="fa-solid fa-gear"></i>Settings
+          </div>
+          <div className="dropDownItem">
+            <i class="fa-solid fa-circle-up"></i>Upgarde Plan
+          </div>
+          <div className="dropDownItem">
+            <i class="fa-solid fa-right-from-bracket"></i>Log Out
+          </div>
+        </div>
+      )}
 
       <Chat />
 
