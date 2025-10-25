@@ -14,6 +14,7 @@
 //       setLatestReply("");
 //       return;
 //     }
+
 //     // if (!prevChats?.length) return;
 
 //     const content = reply.split(" ");
@@ -116,6 +117,7 @@ function Chat() {
     };
   }, [reply]);
 
+  //auto scroll effect
   useEffect(() => {
     const chatContainer = chatContainerRef.current;
     if (chatContainer) {
@@ -149,14 +151,7 @@ function Chat() {
             </ReactMarkdown>
           </div>
         )}
-
-        {!isAnimating && reply && (
-          <div className="modelDiv" key="final-reply-post-anim">
-            <ReactMarkdown rehypePlugins={rehypeHighlight}>
-              {reply}
-            </ReactMarkdown>
-          </div>
-        )}
+        
       </div>
     </>
   );

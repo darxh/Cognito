@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import Chat from "./Chat";
 import "./Chatwindow.css";
 import { MyContext } from "./MyContext";
-import { HashLoader, ScaleLoader } from "react-spinners";
+import { ScaleLoader } from "react-spinners";
 
 function Chatwindow() {
   const {
@@ -42,7 +42,7 @@ function Chatwindow() {
       console.log("recived resilt:", result);
       setReply(result.reply);
     } catch (err) {
-      console.log(err);
+      console.error("Error in getting the response:", err);
     }
     setLoading(false);
   };
@@ -86,13 +86,13 @@ function Chatwindow() {
         <div className="dropDown">
           {/* <div className="dropDownItem">user email here</div> */}
           <div className="dropDownItem">
-            <i className="fa-solid fa-gear"></i>Settings
+            <i className="fa-solid fa-gear"></i> Settings
           </div>
           <div className="dropDownItem">
-            <i class="fa-solid fa-circle-up"></i>Upgarde Plan
+            <i class="fa-solid fa-circle-up"></i> Upgarde Plan
           </div>
           <div className="dropDownItem">
-            <i class="fa-solid fa-right-from-bracket"></i>Log Out
+            <i class="fa-solid fa-right-from-bracket"></i> Log Out
           </div>
         </div>
       )}
