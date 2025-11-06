@@ -21,13 +21,21 @@ if (!process.env.MONGO_URI || !process.env.GEMINI_API_KEY) {
 mongoose.set("strictQuery", false);
 
 app.use(express.json());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://cognito-01.vercel.app",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://cognito-01.vercel.app",
-      "https://cognito-01-g23q5oxu9-darshans-projects-33525cd1.vercel.app",
-    ],
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.error("Blocked by CORS:", origin);
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
