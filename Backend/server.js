@@ -23,7 +23,11 @@ mongoose.set("strictQuery", false);
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [
+      "http://localhost:5173",
+      "https://cognito-01.vercel.app",
+      "https://cognito-01-g23q5oxu9-darshans-projects-33525cd1.vercel.app",
+    ],
     credentials: true,
   })
 );
