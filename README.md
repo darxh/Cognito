@@ -13,7 +13,7 @@ Cognito is a full-stack AI chat platform that allows users to sign up, log in, a
 - Environment-based configuration for flexible deployment
 - Deployed architecture:
   - Frontend: [Vercel Deployment](https://cognito-01.vercel.app/)
-  - Backend: [Render API](https://cognito-backend-igvt.onrender.com)
+  - Backend: [Render API](https://cognito-backend-igvt.onrender.com/health)
 
 ---
 
