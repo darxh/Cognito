@@ -17,17 +17,16 @@ mongoose.set("strictQuery", false);
 
 app.use(express.json());
 
-const allowedOrigins = ["http://localhost:5173", /\.vercel\.app$/];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://cognito-01.vercel.app",
+  "https://cognito-three.vercel.app",
+];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (
-        !origin ||
-        allowedOrigins.some((o) =>
-          o instanceof RegExp ? o.test(origin) : o === origin
-        )
-      ) {
+      if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         console.error("Blocked by CORS:", origin);
@@ -37,6 +36,26 @@ app.use(
     credentials: true,
   })
 );
+// const allowedOrigins = ["http://localhost:5173", /\.vercel\.app$/];
+
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       if (
+//         !origin ||
+//         allowedOrigins.some((o) =>
+//           o instanceof RegExp ? o.test(origin) : o === origin
+//         )
+//       ) {
+//         callback(null, true);
+//       } else {
+//         console.error("Blocked by CORS:", origin);
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true,
+//   })
+// );
 
 app.use("/auth", authRoutes);
 app.use("/api", chatRoutes);
