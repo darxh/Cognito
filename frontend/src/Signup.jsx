@@ -8,8 +8,9 @@ function Signup() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const BACKEND_URL =
-    import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
+  const BACKEND_URL = (
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:8080"
+  ).replace(/\/+$/, "");
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -23,16 +24,19 @@ function Signup() {
         body: JSON.stringify({ username, email, password }),
       });
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Signup failed");
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data.error || data.message || "Signup failed");
+      }
 
       setSuccess(true);
-
       localStorage.setItem("username", username);
 
       setTimeout(() => (window.location.href = "/login"), 2000);
     } catch (err) {
-      setError(err.message);
+      console.error("Signup error:", err);
+      setError(err.message || "Signup failed");
     }
   };
 
@@ -73,7 +77,7 @@ function Signup() {
       ) : (
         <div className="welcome-box">
           <h2>Welcome to Cognito!</h2>
-          <p>You’re all set to start exploring AI magic.</p>
+          <p>You’re all set to start exploring AI magic ✨</p>
         </div>
       )}
     </div>

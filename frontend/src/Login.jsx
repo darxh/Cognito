@@ -6,8 +6,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const BACKEND_URL =
-    import.meta.env.VITE_BACKEND_URL || "http://localhost:8080";
+  const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || "http://localhost:8080").replace(/\/+$/, "");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,16 +19,19 @@ function Login() {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
-      if (!res.ok)
-        throw new Error(data.error || data.message || "Login failed");
+      // Parse response safely
+      const data = await res.json().catch(() => ({}));
 
+      if (!res.ok) {
+        throw new Error(data.error || data.message || "Login failed");
+      }
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", data.username || "User");
 
       window.location.href = "/";
     } catch (err) {
-      setError(err.message);
+      console.error("Login error:", err);
+      setError(err.message || "Login failed");
     }
   };
 
