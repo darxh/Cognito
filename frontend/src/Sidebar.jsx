@@ -76,7 +76,11 @@ function Sidebar() {
     <section className="sidebar">
       <div className="sidebar-header">
         <div className="newChatBtn" onClick={createNewChat}>
-          <img src="src/assets/blacklogo.png" className="logo" alt="logo" />
+          <img
+            src="https://i.postimg.cc/SxYnKTyw/blacklogo.png"
+            className="logo"
+            alt="logo"
+          />
           <i className="fa-solid fa-pen-to-square"></i>
         </div>
       </div>
