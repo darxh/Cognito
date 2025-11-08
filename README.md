@@ -1,18 +1,16 @@
 **Cognito - AI Chat Platform**
 ---
-## 📋 Overview
+## Overview
 
 Cognito is a full-stack AI chat platform that enables users to have intelligent conversations with Google Gemini AI. The application features secure authentication, persistent chat history, and a clean, responsive interface optimized for all devices.
 
+<div align="center">
+  
 **A modern AI chat application powered by Google Gemini**
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success)](https://cognito-01.vercel.app)
 
-<div align="center">
-
 ![Cognito Banner](https://i.postimg.cc/Y2mn7kgS/Screenshot-2025-11-08-142744.png)
-
-
 
 </div>
 
@@ -20,7 +18,7 @@ Cognito is a full-stack AI chat platform that enables users to have intelligent 
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **AI-Powered Conversations**: Integration with Google Gemini 2.5 Flash
 - **Secure Authentication**: JWT-based auth with encrypted passwords
@@ -207,7 +205,7 @@ This project is developed for educational and portfolio purposes.
 
 ---
 
-## 👨‍💻 Developer
+## Developer
 
 **Made with ❤️ by Darsh**
 
