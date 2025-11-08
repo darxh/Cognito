@@ -2,7 +2,7 @@
 
 Cognito is a full-stack AI chat platform that allows users to sign up, log in, and interact with an AI assistant powered by Google Gemini. It includes secure authentication, a modern responsive frontend, and a Node.js backend integrated with MongoDB. The application is deployed with the backend hosted on Render and the frontend on Vercel.
 
-**Live Demo**: [https://wanderlust-ljm7.onrender.com](https://cognito-01.vercel.app/)
+**Live Demo**: [https://cognito-01.vercel.app](https://cognito-01.vercel.app/)
 
 ![Portfolio Preview](https://i.postimg.cc/Y2mn7kgS/Screenshot-2025-11-08-142744.png)
 ---
