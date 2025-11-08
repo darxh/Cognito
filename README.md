@@ -1,35 +1,145 @@
-# Cognito – AI Chat Platform
+**Cognito - AI Chat Platform**
+---
+## 📋 Overview
 
-Cognito is a full-stack AI chat platform that allows users to sign up, log in, and interact with an AI assistant powered by Google Gemini. It includes secure authentication, a modern responsive frontend, and a Node.js backend integrated with MongoDB. The application is deployed with the backend hosted on Render and the frontend on Vercel.
+Cognito is a full-stack AI chat platform that enables users to have intelligent conversations with Google Gemini AI. The application features secure authentication, persistent chat history, and a clean, responsive interface optimized for all devices.
 
-**Live Demo**: [https://cognito-01.vercel.app](https://cognito-01.vercel.app/)
+**A modern AI chat application powered by Google Gemini**
 
-![Portfolio Preview](https://i.postimg.cc/Y2mn7kgS/Screenshot-2025-11-08-142744.png)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://cognito-01.vercel.app)
+
+<div align="center">
+
+![Cognito Banner](https://i.postimg.cc/Y2mn7kgS/Screenshot-2025-11-08-142744.png)
+
+
+
+</div>
+
+**Live Application**: [https://cognito-01.vercel.app](https://cognito-01.vercel.app)
+
 ---
 
-## Overview
+## ✨ Key Features
 
-- Secure user authentication with JWT and bcrypt
-- Real-time chat interface powered by Gemini API
-- Full-stack integration using React (Vite) and Node.js (Express)
-- Cloud-hosted MongoDB database
-- Environment-based configuration for flexible deployment
-- Deployed architecture:
-  - Frontend: [Vercel Deployment](https://cognito-01.vercel.app/)
-  - Backend: [Render API](https://cognito-backend-igvt.onrender.com/health)
+- **AI-Powered Conversations**: Integration with Google Gemini 2.5 Flash
+- **Secure Authentication**: JWT-based auth with encrypted passwords
+- **Thread Management**: Create, view, and organize multiple conversations
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- **Persistent Storage**: All conversations saved to the cloud
+- **Real-time Responses**: Fast API integration with loading indicators
+- **Markdown Support**: Rich text formatting with syntax-highlighted code blocks
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-| ------ | ----------- |
-| Frontend | React (Vite), Tailwind CSS |
-| Backend | Node.js, Express |
-| Database | MongoDB Atlas |
-| AI Service | Google Gemini API |
-| Authentication | JWT, bcrypt |
-| Deployment | Render (backend), Vercel (frontend) |
+### Frontend
+- React 19 with Vite
+- React Router for navigation
+- React Markdown for message rendering
+- Modern CSS with responsive design
+
+### Backend
+- Node.js & Express
+- MongoDB with Mongoose ODM
+- JWT for authentication
+- Bcrypt for password security
+
+### Services
+- Google Gemini API for AI responses
+- MongoDB Atlas for cloud database
+- Vercel (Frontend hosting)
+- Render (Backend hosting)
+
+---
+
+## Architecture
+
+```
+┌─────────────────┐         ┌──────────────────┐         ┌─────────────────┐
+│                 │         │                  │         │                 │
+│  React Frontend │ ◄─────► │  Express Backend │ ◄─────► │  MongoDB Atlas  │
+│  (Vercel)       │  REST   │  (Render)        │  CRUD   │  (Database)     │
+│                 │   API   │                  │         │                 │
+└─────────────────┘         └──────────────────┘         └─────────────────┘
+                                     │
+                                     │ API Call
+                                     ▼
+                            ┌──────────────────┐
+                            │                  │
+                            │  Google Gemini   │
+                            │  AI Service      │
+                            │                  │
+                            └──────────────────┘
+```
+
+The application follows a modern three-tier architecture with a React frontend, RESTful API backend, and cloud-hosted database. AI responses are generated through Google's Gemini API.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- MongoDB Atlas account
+- Google Gemini API key
+
+### Installation
+
+1. **Clone and install dependencies**
+```bash
+# Backend
+cd Backend
+npm install
+
+# Frontend
+cd frontend
+npm install
+```
+
+2. **Configure environment variables**
+
+Backend `.env`:
+```env
+PORT=8080
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+Frontend `.env`:
+```env
+VITE_BACKEND_URL=http://localhost:8080
+```
+
+3. **Run the application**
+```bash
+# Backend (from Backend directory)
+npm start
+
+# Frontend (from frontend directory)
+npm run dev
+```
+
+Access the app at `http://localhost:5173`
+
+---
+
+## 📡 API Overview
+
+### Authentication
+- `POST /auth/signup` - Create new account
+- `POST /auth/login` - Login and receive JWT token
+- `GET /auth/logout` - Logout user
+
+### Chat Operations
+- `GET /api/thread` - Get all user threads
+- `GET /api/thread/:threadId` - Get specific thread messages
+- `POST /api/chat` - Send message and get AI response
+- `DELETE /api/thread/:threadId` - Delete a thread
+
+All protected routes require JWT token in Authorization header.
 
 ---
 
@@ -37,27 +147,74 @@ Cognito is a full-stack AI chat platform that allows users to sign up, log in, a
 
 ```
 Cognito/
-│
 ├── Backend/
-│ ├── routes/
-│ │ ├── auth.js
-│ │ └── chat.js
-│ ├── models/
-│ │ └── User.js
-│ ├── server.js
-│ └── .env
+│   ├── middleware/
+│   │   └── auth.js              # JWT authentication middleware
+│   ├── models/
+│   │   ├── User.js              # User schema
+│   │   └── Thread.js            # Thread & Message schemas
+│   ├── routes/
+│   │   ├── auth.js              # Authentication routes
+│   │   └── chat.js              # Chat & thread routes
+│   ├── utils/
+│   │   └── gemini.js            # Gemini API integration
+│   ├── server.js                # Express server setup
+│   ├── package.json
+│   └── .env
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── Login.jsx
-│ │ ├── Signup.jsx
-│ │ ├── ChatWindow.jsx
-│ │ └── main.jsx
-│ ├── public/
-│ ├── vite.config.js
-│ └── .env
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Chat.jsx         # Message display component
+│   │   │   ├── ChatWindow.jsx   # Main chat interface
+│   │   │   └── Sidebar.jsx      # Thread history sidebar
+│   │   ├── pages/
+│   │   │   ├── Login.jsx        # Login page
+│   │   │   └── Signup.jsx       # Signup page
+│   │   ├── styles/
+│   │   │   ├── App.css
+│   │   │   ├── Auth.css
+│   │   │   ├── Chat.css
+│   │   │   ├── ChatWindow.css
+│   │   │   └── Sidebar.css
+│   │   ├── Router.jsx           # Route configuration
+│   │   ├── MyContext.jsx        # React Context API
+│   │   ├── App.jsx              # Main app component
+│   │   └── main.jsx             # Entry point
+│   ├── public/
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── vercel.json              # Vercel routing config
+│   └── package.json
 │
+├── .gitignore
 └── README.md
 ```
+
+---
+
+## Deployment
+
+- **Frontend**: Deployed on Vercel with automatic GitHub integration
+- **Backend**: Hosted on Render with Node.js environment
+- **Database**: MongoDB Atlas cloud database
+
+---
+
+## License
+
+This project is developed for educational and portfolio purposes.
+
+---
+
+## 👨‍💻 Developer
+
+**Made with ❤️ by Darsh**
+
+---
+
+<div align="center">
+
+*Cognito - Your intelligent chat companion*
+
+</div>
