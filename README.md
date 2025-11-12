@@ -194,7 +194,7 @@ Cognito/
 ## Deployment
 
 - **Frontend**: Deployed on Vercel with automatic GitHub integration
-- **Backend**: Hosted on Render with Node.js environment
+- **Backend** : Hosted on Render with Node.js environment
 - **Database**: MongoDB Atlas cloud database
 
 ---
