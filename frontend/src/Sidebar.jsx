@@ -87,26 +87,6 @@ function Sidebar() {
         </div>
       </div>
 
-      {/* <ul className="history">
-        {allThreads?.map((thread) => (
-          <li
-            key={thread.threadId}
-            onClick={() => changethread(thread.threadId)}
-            className={thread.threadId === currThreadId ? "highlighted" : ""}
-          >
-            {thread.title}
-            <i
-              className="fa-solid fa-trash deleteBtn"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                deleteThread(thread.threadId);
-              }}
-            ></i>
-          </li>
-        ))}
-      </ul> */}
-
       <ul className="history">
         {allThreads?.map((thread) => (
           <li
@@ -114,9 +94,34 @@ function Sidebar() {
             onClick={() => changethread(thread.threadId)}
             className={thread.threadId === currThreadId ? "highlighted" : ""}
           >
-            <span className="thread-title">{thread.title}</span>
+            {thread.title}
+            {/* <i
+              className="fa-solid fa-trash deleteBtn"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                deleteThread(thread.threadId);
+              }}
+            ></i> */}
+            <i className="fa-solid fa-trash deleteBtn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!window.confirm("Are you sure you want to delete this chat?")) return;
+                  deleteThread(thread.threadId);
+                }}
+              ></i>
+          </li>
+        ))}
+      </ul>
 
-            {/* FIXED DELETE BUTTON — works on real phones */}
+      {/* <ul className="history">
+        {allThreads?.map((thread) => (
+          <li
+            key={thread.threadId}
+            onClick={() => changethread(thread.threadId)}
+            className={thread.threadId === currThreadId ? "highlighted" : ""}
+          >
+            <span className="thread-title">{thread.title}</span>
             <div
               className="deleteBtn"
               onClick={(e) => {
@@ -135,7 +140,7 @@ function Sidebar() {
             </div>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       <div className="sign">
         <p>By darsh ♥</p>

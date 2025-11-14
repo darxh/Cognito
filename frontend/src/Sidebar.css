@@ -174,10 +174,6 @@
   color: #b4b4b4;
 }
 
-.deleteBtn:active i {
-  transform: scale(0.9);
-}
-
 .history li {
   position: relative;
 }
