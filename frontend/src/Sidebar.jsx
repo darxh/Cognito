@@ -24,6 +24,8 @@ function Sidebar() {
   }, [getAllthreads]);
 
   const createNewChat = async () => {
+    document.querySelector(".sidebar")?.classList.remove("open");
+    document.querySelector(".overlay")?.classList.remove("active");
     setNewChat(true);
     setPrompt("");
     setReply(null);
