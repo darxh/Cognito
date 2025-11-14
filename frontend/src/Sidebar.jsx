@@ -87,7 +87,7 @@ function Sidebar() {
         </div>
       </div>
 
-      <ul className="history">
+      {/* <ul className="history">
         {allThreads?.map((thread) => (
           <li
             key={thread.threadId}
@@ -103,6 +103,36 @@ function Sidebar() {
                 deleteThread(thread.threadId);
               }}
             ></i>
+          </li>
+        ))}
+      </ul> */}
+
+      <ul className="history">
+        {allThreads?.map((thread) => (
+          <li
+            key={thread.threadId}
+            onClick={() => changethread(thread.threadId)}
+            className={thread.threadId === currThreadId ? "highlighted" : ""}
+          >
+            <span className="thread-title">{thread.title}</span>
+
+            {/* FIXED DELETE BUTTON — works on real phones */}
+            <div
+              className="deleteBtn"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                e.nativeEvent.stopImmediatePropagation();
+                deleteThread(thread.threadId);
+              }}
+              onTouchStart={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                e.nativeEvent.stopImmediatePropagation();
+              }}
+            >
+              <i className="fa-solid fa-trash"></i>
+            </div>
           </li>
         ))}
       </ul>

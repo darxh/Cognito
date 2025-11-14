@@ -162,21 +162,26 @@
 }
 
 .deleteBtn {
-  padding: 10px;           /* bigger tap area */
-  margin-right: -8px;      /* keeps layout same */
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
-.deleteBtn:active {
+.deleteBtn i {
+  opacity: 1 !important; 
+  color: #b4b4b4;
+}
+
+.deleteBtn:active i {
   transform: scale(0.9);
-}
-
-.history li .deleteBtn {
-  pointer-events: auto;
 }
 
 .history li {
   position: relative;
+}
+
+.history li .deleteBtn {
+  pointer-events: auto;
 }
