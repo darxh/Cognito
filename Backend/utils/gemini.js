@@ -36,7 +36,7 @@ const getGeminiAPIResponse = async (message) => {
     }
 
     return data.candidates[0].content.parts[0].text;
-  } catch (err) {
+   } catch (err) {
     console.log(`error while processing the data`, err);
     throw new Error("Failed to fetch data from Gemini API");
   }
