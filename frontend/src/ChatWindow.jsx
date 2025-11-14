@@ -5,8 +5,16 @@ import { MyContext } from "./MyContext";
 import { ScaleLoader } from "react-spinners";
 
 function Chatwindow() {
-  const { prompt, setPrompt, reply, prevChats, setPrevChats, sendMessage } =
-    useContext(MyContext);
+  const { 
+    prompt, 
+    setPrompt, 
+    reply, 
+    prevChats, 
+    setPrevChats, 
+    sendMessage,
+    newChat,
+    setNewChat
+  } = useContext(MyContext);
 
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -14,15 +22,22 @@ function Chatwindow() {
   const handleSend = async () => {
     if (!prompt.trim()) return;
 
+    if (newChat) setNewChat(false);
+
     setPrevChats((prevChats) => [
       ...prevChats,
       { role: "user", content: prompt },
     ]);
 
+    const tempPrompt = prompt;
+    setPrompt("");
+
+    setIsOpen(false);
+
     setLoading(true);
 
     try {
-      await sendMessage();
+      await sendMessage(tempPrompt);
     } catch (err) {
       console.error("Error while sending:", err);
     } finally {
@@ -36,7 +51,6 @@ function Chatwindow() {
         ...prevChats,
         { role: "model", content: reply },
       ]);
-      setPrompt("");
     }
   }, [reply]);
 
@@ -63,6 +77,7 @@ function Chatwindow() {
 
   return (
     <div className="chatWindow">
+
       <div className="navbar">
         <div className="leftNav">
           <i className="fa-solid fa-bars hamburger" onClick={toggleSidebar}></i>
@@ -114,6 +129,7 @@ function Chatwindow() {
             <i className="fa-solid fa-paper-plane"></i>
           </div>
         </div>
+
         <p className="info">Cognito can make mistakes, so double-check it</p>
       </div>
 
