@@ -96,8 +96,9 @@ function Sidebar() {
           >
             {thread.title}
             <i
-              className="fa-solid fa-trash"
+              className="fa-solid fa-trash deleteBtn"
               onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 deleteThread(thread.threadId);
               }}

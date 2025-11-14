@@ -160,3 +160,23 @@
     max-width: 280px;
   }
 }
+
+.deleteBtn {
+  padding: 10px;           /* bigger tap area */
+  margin-right: -8px;      /* keeps layout same */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:active {
+  transform: scale(0.9);
+}
+
+.history li .deleteBtn {
+  pointer-events: auto;
+}
+
+.history li {
+  position: relative;
+}
