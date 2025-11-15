@@ -255,10 +255,8 @@
 }
 
 .history li {
-  cursor: pointer;
   list-style: none;
   padding: 10px 12px;
-  padding-right: 48px; /* Make room for delete button */
   margin-bottom: 0.4rem;
   font-size: 1rem;
   border-radius: 10px;
@@ -275,34 +273,55 @@
   background: rgba(255, 255, 255, 0.07);
 }
 
+.thread-title {
+  flex: 1;
+  cursor: pointer;
+  padding-right: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .highlighted {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
 
-/* Delete button - always visible on mobile */
+.history li.highlighted {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff;
+  padding-left: 10px;
+}
+
+/* Delete button */
 .deleteBtn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 44px; /* Larger touch target */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  background: transparent;
-  border: none;
-  padding: 0;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  margin: -8px -8px -8px 0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.deleteBtn:active {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.95);
 }
 
 .fa-trash {
-  opacity: 0.6; /* Always visible on mobile */
-  font-size: 16px;
+  font-size: 14px;
   color: #b4b4b4;
   transition: all 0.2s ease;
-  pointer-events: none; /* Let clicks pass through to parent */
+  opacity: 0.7;
+  pointer-events: none;
 }
 
 /* Desktop hover states */
@@ -314,29 +333,19 @@
   .history li:hover .fa-trash {
     opacity: 1;
   }
+  
+  .deleteBtn:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.deleteBtn:hover .fa-trash {
+  color: #f87171;
 }
 
 .history li.highlighted .fa-trash {
   opacity: 1 !important;
   color: #ffffff !important;
-}
-
-.history li.highlighted {
-  background: rgba(255, 255, 255, 0.15) !important;
-  color: #fff;
-  padding-left: 10px;
-}
-
-.fa-trash:hover {
-  color: #f87171;
-}
-
-.deleteBtn:active {
-  transform: scale(0.9);
-}
-
-.deleteBtn:active .fa-trash {
-  color: #f87171;
 }
 
 .sign {
