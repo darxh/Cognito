@@ -162,33 +162,25 @@ Cognito/
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── assets/
-│   │   │   └── blacklogo.png    # Static assets
 │   │   ├── components/
-│   │   │   ├── Chat/
-│   │   │   │   ├── Chat.jsx     # Message display component
-│   │   │   │   └── Chat.css     # Chat component styles
-│   │   │   ├── ChatWindow/
-│   │   │   │   ├── ChatWindow.jsx # Main chat interface
-│   │   │   │   └── ChatWindow.css # ChatWindow styles
-│   │   │   └── Sidebar/
-│   │   │       ├── Sidebar.jsx  # Thread history sidebar
-│   │   │       └── Sidebar.css  # Sidebar styles
-│   │   ├── context/
-│   │   │   └── MyContext.jsx    # React Context API
+│   │   │   ├── Chat.jsx         # Message display component
+│   │   │   ├── ChatWindow.jsx   # Main chat interface
+│   │   │   └── Sidebar.jsx      # Thread history sidebar
 │   │   ├── pages/
 │   │   │   ├── Login.jsx        # Login page
 │   │   │   └── Signup.jsx       # Signup page
-│   │   ├── routes/
-│   │   │   └── Router.jsx       # Route configuration
 │   │   ├── styles/
-│   │   │   ├── App.css          # Global app styles
-│   │   │   └── Auth.css         # Shared authentication styles
+│   │   │   ├── App.css
+│   │   │   ├── Auth.css
+│   │   │   ├── Chat.css
+│   │   │   ├── ChatWindow.css
+│   │   │   └── Sidebar.css
+│   │   ├── Router.jsx           # Route configuration
+│   │   ├── MyContext.jsx        # React Context API
 │   │   ├── App.jsx              # Main app component
 │   │   └── main.jsx             # Entry point
 │   ├── public/
 │   ├── index.html
-|   ├── index.css
 │   ├── vite.config.js
 │   ├── vercel.json              # Vercel routing config
 │   └── package.json
@@ -196,7 +188,6 @@ Cognito/
 ├── .gitignore
 └── README.md
 ```
-
 ---
 
 ## Deployment
