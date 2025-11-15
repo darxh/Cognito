@@ -178,9 +178,11 @@ Cognito/
 │   │   ├── Router.jsx           # Route configuration
 │   │   ├── MyContext.jsx        # React Context API
 │   │   ├── App.jsx              # Main app component
-│   │   └── main.jsx             # Entry point
+│   │   ├── main.jsx             # Entry point
+│   │   └── index.css            # Global/Tailwind styles
 │   ├── public/
 │   ├── index.html
+|   ├── index.css
 │   ├── vite.config.js
 │   ├── vercel.json              # Vercel routing config
 │   └── package.json
