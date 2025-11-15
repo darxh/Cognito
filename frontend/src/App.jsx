@@ -1,7 +1,7 @@
-import "./App.css";
-import Chatwindow from "./ChatWindow";
-import Sidebar from "./Sidebar";
-import { MyContext } from "./MyContext";
+import "./styles/App.css"; //
+import Chatwindow from "./components/Chatwindow/ChatWindow";
+import Sidebar from "./components/Sidebar/Sidebar";
+import { MyContext } from "./context/MyContext";
 import { useState, useCallback } from "react";
 import { v1 as uuidv1 } from "uuid";
 

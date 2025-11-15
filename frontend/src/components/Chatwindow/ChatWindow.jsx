@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
-import Chat from "./Chat";
+import Chat from "../Chat/Chat";
 import "./ChatWindow.css";
-import { MyContext } from "./MyContext";
+import { MyContext } from "../../context/MyContext";
 import { ScaleLoader } from "react-spinners";
 
 function Chatwindow() {

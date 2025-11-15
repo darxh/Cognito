@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import App from "./App.jsx";
-import Login from "./Login.jsx";
-import Signup from "./Signup.jsx";
+import App from "../App.jsx";
+import Login from "../pages/Login.jsx";
+import Signup from "../pages/Signup.jsx";
 
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem("token");
