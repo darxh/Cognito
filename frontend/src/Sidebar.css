@@ -1,4 +1,4 @@
-/* .sidebar {
+.sidebar {
   background: rgba(23, 23, 23, 0.92);
   color: #d4d4d4;
   height: 100vh;
@@ -180,9 +180,9 @@
 
 .history li .deleteBtn {
   pointer-events: auto;
-} */
+}
 
-.sidebar {
+/* .sidebar {
   background: rgba(23, 23, 23, 0.92);
   color: #d4d4d4;
   height: 100vh;
@@ -293,7 +293,6 @@
   padding-left: 10px;
 }
 
-/* Delete button */
 .deleteBtn {
   background: none;
   border: none;
@@ -324,7 +323,6 @@
   pointer-events: none;
 }
 
-/* Desktop hover states */
 @media (min-width: 769px) {
   .fa-trash {
     opacity: 0;
@@ -387,4 +385,4 @@
     width: 75%;
     max-width: 280px;
   }
-}
+} */
