@@ -185,10 +185,10 @@ Cognito/
 │   │   │   ├── App.css          # Global app styles
 │   │   │   └── Auth.css         # Shared authentication styles
 │   │   ├── App.jsx              # Main app component
-│   │   └── main.jsx             # Entry point
+│   │   ├── main.jsx             # Entry point
+│   │   └── index.css            # Global/Tailwind styles
 │   ├── public/
-│   ├── index.html
-|   ├── index.css
+│   ├── index.html               # HTML entry point (Vite)
 │   ├── vite.config.js
 │   ├── vercel.json              # Vercel routing config
 │   └── package.json
