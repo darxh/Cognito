@@ -95,7 +95,7 @@ function Sidebar() {
             className={thread.threadId === currThreadId ? "highlighted" : ""}
           >
             {thread.title}
-            {/* <i
+            <i
               className="fa-solid fa-trash deleteBtn"
               onClick={(e) => {
                 e.stopPropagation();
@@ -105,20 +105,7 @@ function Sidebar() {
                   return;
                 deleteThread(thread.threadId);
               }}
-            ></i> */}
-            <div
-              className="deleteBtn"
-              onClick={(e) => {
-                e.stopPropagation(); // Prevents chat from opening
-                if (
-                  !window.confirm("Are you sure you want to delete this chat?")
-                )
-                  return;
-                deleteThread(thread.threadId);
-              }}
-            >
-              <i className="fa-solid fa-trash"></i>
-            </div>
+            ></i>
           </li>
         ))}
       </ul>
