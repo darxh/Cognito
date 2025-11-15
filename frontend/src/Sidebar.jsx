@@ -119,7 +119,6 @@
 
 // export default Sidebar;
 
-
 import "./Sidebar.css";
 import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext";
@@ -175,14 +174,15 @@ function Sidebar() {
     // Stop propagation FIRST
     e.stopPropagation();
     e.preventDefault();
-    
+
     if (!window.confirm("Are you sure you want to delete this chat?")) {
       return;
     }
 
     try {
       let response = await fetch(
-        `http://localhost:8080/api/thread/${threadId}`,
+        // `http://localhost:8080/api/thread/${threadId}`,
+        `https://cognito-backend-igvt.onrender.com/api/thread/${threadId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },
@@ -223,7 +223,7 @@ function Sidebar() {
             key={thread.threadId}
             className={thread.threadId === currThreadId ? "highlighted" : ""}
           >
-            <span 
+            <span
               className="thread-title"
               onClick={() => changethread(thread.threadId)}
             >
