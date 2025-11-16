@@ -35,8 +35,10 @@
 
 .newChatBtn {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
+  width: 100%;
   padding: 10px 14px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.06);
@@ -46,7 +48,6 @@
   font-weight: 500;
   -webkit-tap-highlight-color: transparent;
 }
-
 .newChatBtn:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: scale(1.02);
@@ -139,7 +140,7 @@
   transition: all 0.2s ease;
   pointer-events: none;
   /* Hidden by default globally, shown via hover or highlight */
-  opacity: 0; 
+  opacity: 0;
 }
 
 /* --- MOBILE: ACTIVE CHAT ONLY --- */
@@ -151,7 +152,7 @@
 
   /* 1. Default State: Button is hidden and unclickable */
   .deleteBtn {
-    pointer-events: none; 
+    pointer-events: none;
   }
   .fa-trash {
     opacity: 0;
@@ -164,7 +165,7 @@
   .history li.highlighted .fa-trash {
     opacity: 1; /* Make it visible */
   }
-  
+
   /* Red color on tap for active chat */
   .deleteBtn:active .fa-trash {
     color: #f87171;
@@ -177,11 +178,11 @@
   .history li:hover .fa-trash {
     opacity: 1;
   }
-  
+
   .deleteBtn:hover .fa-trash {
     color: #f87171;
   }
-  
+
   /* Also show if it is the active chat (Desktop preference) */
   .history li.highlighted .fa-trash {
     opacity: 1 !important;
@@ -221,4 +222,7 @@
 .overlay.active {
   opacity: 1;
   pointer-events: auto;
+}
+fa-pen-to-square {
+  margin-right: 2.1rem !important;
 }

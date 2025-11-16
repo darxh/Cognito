@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import Chat from "../Chat/Chat"; 
+import Chat from "../Chat/Chat";
 import "./ChatWindow.css";
 import { MyContext } from "../../context/MyContext";
 import { ScaleLoader } from "react-spinners";
@@ -118,7 +118,8 @@ function Chatwindow() {
         <div className="leftNav">
           <i className="fa-solid fa-bars hamburger" onClick={toggleSidebar}></i>
           <span className="appTitle">
-            Cognito <i className="fa-solid fa-angle-down"></i>
+            Cognito
+            {/* Cognito <i className="fa-solid fa-angle-down"></i> */}
           </span>
         </div>
 

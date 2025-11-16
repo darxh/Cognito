@@ -92,6 +92,7 @@ function Sidebar() {
             className="logo"
             alt="logo"
           />
+          
           <i className="fa-solid fa-pen-to-square"></i>
         </div>
       </div>
