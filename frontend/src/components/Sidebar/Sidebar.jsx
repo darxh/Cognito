@@ -88,7 +88,7 @@ function Sidebar() {
       <div className="sidebar-header">
         <div className="newChatBtn" onClick={createNewChat}>
           <img
-            src="https://i.postimg.cc/SxYnKTyw/blacklogo.png"
+            src="https://i.postimg.cc/gkLLmfYp/Your_Visual_Identity_Starts_Here_removebg_preview.png"
             className="logo"
             alt="logo"
           />

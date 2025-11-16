@@ -56,7 +56,7 @@
   height: 28px;
   width: 28px;
   border-radius: 50%;
-  background: #fff;
+  /* background: #fff; */
   object-fit: cover;
 }
 
