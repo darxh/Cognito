@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/Auth.css";
 
 function Login() {
-  // ... keep your existing state and logic ...
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -12,7 +12,6 @@ function Login() {
   ).replace(/\/+$/, "");
 
   const handleLogin = async (e) => {
-    // ... keep your existing login logic ...
     e.preventDefault();
     setError("");
     setLoading(true);
