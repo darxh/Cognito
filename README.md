@@ -8,13 +8,13 @@ Cognito is a full-stack AI chat platform that enables users to have intelligent 
   
 **A modern AI chat application powered by Google Gemini**
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://cognito.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://cognito-01.vercel.app)
 
 ![Cognito Banner](https://i.postimg.cc/Y2mn7kgS/Screenshot-2025-11-08-142744.png)
 
 </div>
 
-**Live Application**: [https://cognito-01.vercel.app](https://cognito.vercel.app)
+**Live Application**: [https://cognito-01.vercel.app/](https://cognito-01.vercel.app/)
 
 ---
 
