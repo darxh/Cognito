@@ -20,7 +20,7 @@ function Chat() {
     <div className="chats" ref={chatContainerRef}>
       {newChat && (
         <div className="welcome-message">
-          <h1>Hello, {username}</h1>
+          <h1>Hey, {username}</h1>
           <p>What can I do for you today?</p>
         </div>
       )}
