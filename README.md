@@ -147,58 +147,58 @@ All protected routes require JWT token in Authorization header.
 Cognito/
 ├── Backend/
 │   ├── middleware/
-│   │   └── auth.js              # JWT authentication middleware
+│   │   └── auth.js                   # JWT authentication middleware
 │   ├── models/
-│   │   ├── User.js              # User schema
-│   │   └── Thread.js            # Thread & Message schemas
+│   │   ├── User.js                   # User schema
+│   │   └── Thread.js                 # Thread & Message schemas
 │   ├── routes/
-│   │   ├── auth.js              # Authentication routes
-│   │   └── chat.js              # Chat & thread routes
+│   │   ├── auth.js                   # Authentication routes
+│   │   └── chat.js                   # Chat & thread routes
 │   ├── utils/
-│   │   └── gemini.js            # Gemini API integration
-│   ├── server.js                # Express server setup
+│   │   └── gemini.js                 # Gemini API integration
+│   ├── server.js                     # Express server setup
 │   ├── package.json
 │   └── .env
 │
 ├── frontend/
 │   ├── src/
 │   │   ├── assets/
-│   │   │   └── blacklogo.png    # Static assets
+│   │   │   └── blacklogo.png         # Static assets
 │   │   ├── components/
 │   │   │   ├── AuthLayout/
-│   │   │   │   └── AuthLayout.jsx # Wrapper for auth pages (adds background)
+│   │   │   │   └── AuthLayout.jsx    # Wrapper for auth pages (adds background)
 │   │   │   ├── AuthNavbar/
-│   │   │   │   ├── AuthNavbar.jsx # Floating navbar for auth pages
-│   │   │   │   └── AuthNavbar.css # Styles for AuthNavbar
+│   │   │   │   ├── AuthNavbar.jsx    # Floating navbar for auth pages
+│   │   │   │   └── AuthNavbar.css    # Styles for AuthNavbar
 │   │   │   ├── Chat/
-│   │   │   │   ├── Chat.jsx     # Message display component
-│   │   │   │   └── Chat.css     # Chat component styles
+│   │   │   │   ├── Chat.jsx          # Message display component
+│   │   │   │   └── Chat.css          # Chat component styles
 │   │   │   ├── ChatWindow/
-│   │   │   │   ├── ChatWindow.jsx # Main chat interface
-│   │   │   │   └── ChatWindow.css # ChatWindow styles
+│   │   │   │   ├── ChatWindow.jsx    # Main chat interface
+│   │   │   │   └── ChatWindow.css    # ChatWindow styles
 │   │   │   ├── DarkVeil/
-│   │   │   │   ├── DarkVeil.jsx # Aurora background animation
-│   │   │   │   └── DarkVeil.css # Styles for DarkVeil
+│   │   │   │   ├── DarkVeil.jsx      # Aurora background animation
+│   │   │   │   └── DarkVeil.css      # Styles for DarkVeil
 │   │   │   └── Sidebar/
-│   │   │       ├── Sidebar.jsx  # Thread history sidebar
-│   │   │       └── Sidebar.css  # Sidebar styles
+│   │   │       ├── Sidebar.jsx       # Thread history sidebar
+│   │   │       └── Sidebar.css       # Sidebar styles
 │   │   ├── context/
-│   │   │   └── MyContext.jsx    # React Context API
+│   │   │   └── MyContext.jsx         # React Context API
 │   │   ├── pages/
-│   │   │   ├── Login.jsx        # Login page
-│   │   │   └── Signup.jsx       # Signup page
+│   │   │   ├── Login.jsx             # Login page
+│   │   │   └── Signup.jsx            # Signup page
 │   │   ├── routes/
-│   │   │   └── Router.jsx       # Route configuration
+│   │   │   └── Router.jsx            # Route configuration
 │   │   ├── styles/
-│   │   │   ├── App.css          # Global app styles
-│   │   │   └── Auth.css         # Shared authentication styles
-│   │   ├── App.jsx              # Main app component
-│   │   ├── main.jsx             # Entry point
-│   │   └── index.css            # Global/Tailwind styles
+│   │   │   ├── App.css               # Global app styles
+│   │   │   └── Auth.css              # Shared authentication styles
+│   │   ├── App.jsx                   # Main app component
+│   │   ├── main.jsx                  # Entry point
+│   │   └── index.css                 # Global/Tailwind styles
 │   ├── public/
-│   ├── index.html               # HTML entry point (Vite)
+│   ├── index.html                    # HTML entry point (Vite)
 │   ├── vite.config.js
-│   ├── vercel.json              # Vercel routing config
+│   ├── vercel.json                   # Vercel routing config
 │   └── package.json
 │
 ├── .gitignore
