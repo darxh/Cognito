@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "../App.jsx";
 import Login from "../pages/Login.jsx";
 import Signup from "../pages/Signup.jsx";
-import AuthLayout from "../components/AuthLayout.jsx"; // Import the wrapper
+import AuthLayout from "../components/AuthLayout/AuthLayout"; 
 
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem("token");
@@ -23,7 +23,6 @@ function Router() {
           }
         />
 
-        {/* Wrap Login in AuthLayout */}
         <Route 
           path="/login" 
           element={
@@ -33,7 +32,6 @@ function Router() {
           } 
         />
 
-        {/* Wrap Signup in AuthLayout */}
         <Route 
           path="/signup" 
           element={

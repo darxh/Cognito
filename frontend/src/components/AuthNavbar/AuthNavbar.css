@@ -1,0 +1,63 @@
+.auth-navbar {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-logo {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: #fff;
+}
+.nav-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  color: #a3a3a3;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .auth-navbar {
+    width: calc(100% - 32px);
+    padding: 0 16px;
+  }
+
+  .nav-title {
+    display: block;
+  }
+}

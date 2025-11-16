@@ -19,7 +19,6 @@ const AuthNavbar = () => {
       <div className="nav-right">
         <a href="https://github.com/darxh/Cognito" className="nav-link">Docs</a>
         
-        {/* Dynamic Link: Goes to the opposite page */}
         <Link to={isLogin ? "/signup" : "/login"} className="nav-link">
           {isLogin ? "Sign Up" : "Login"}
         </Link>
