@@ -162,33 +162,48 @@ Cognito/
 │
 ├── frontend/
 │   ├── src/
+│   │   ├── assets/
+│   │   │   └── blacklogo.png    # Static assets
 │   │   ├── components/
-│   │   │   ├── Chat.jsx         # Message display component
-│   │   │   ├── ChatWindow.jsx   # Main chat interface
-│   │   │   └── Sidebar.jsx      # Thread history sidebar
+│   │   │   ├── AuthLayout/
+│   │   │   │   └── AuthLayout.jsx # Wrapper for auth pages (adds background)
+│   │   │   ├── AuthNavbar/
+│   │   │   │   ├── AuthNavbar.jsx # Floating navbar for auth pages
+│   │   │   │   └── AuthNavbar.css # Styles for AuthNavbar
+│   │   │   ├── Chat/
+│   │   │   │   ├── Chat.jsx     # Message display component
+│   │   │   │   └── Chat.css     # Chat component styles
+│   │   │   ├── ChatWindow/
+│   │   │   │   ├── ChatWindow.jsx # Main chat interface
+│   │   │   │   └── ChatWindow.css # ChatWindow styles
+│   │   │   ├── DarkVeil/
+│   │   │   │   ├── DarkVeil.jsx # Aurora background animation
+│   │   │   │   └── DarkVeil.css # Styles for DarkVeil
+│   │   │   └── Sidebar/
+│   │   │       ├── Sidebar.jsx  # Thread history sidebar
+│   │   │       └── Sidebar.css  # Sidebar styles
+│   │   ├── context/
+│   │   │   └── MyContext.jsx    # React Context API
 │   │   ├── pages/
 │   │   │   ├── Login.jsx        # Login page
 │   │   │   └── Signup.jsx       # Signup page
+│   │   ├── routes/
+│   │   │   └── Router.jsx       # Route configuration
 │   │   ├── styles/
-│   │   │   ├── App.css
-│   │   │   ├── Auth.css
-│   │   │   ├── Chat.css
-│   │   │   ├── ChatWindow.css
-│   │   │   └── Sidebar.css
-│   │   ├── Router.jsx           # Route configuration
-│   │   ├── MyContext.jsx        # React Context API
+│   │   │   ├── App.css          # Global app styles
+│   │   │   └── Auth.css         # Shared authentication styles
 │   │   ├── App.jsx              # Main app component
 │   │   ├── main.jsx             # Entry point
 │   │   └── index.css            # Global/Tailwind styles
 │   ├── public/
-│   ├── index.html
-|   ├── index.css
+│   ├── index.html               # HTML entry point (Vite)
 │   ├── vite.config.js
 │   ├── vercel.json              # Vercel routing config
 │   └── package.json
 │
 ├── .gitignore
 └── README.md
+
 ```
 ---
 
