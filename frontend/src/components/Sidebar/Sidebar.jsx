@@ -125,7 +125,9 @@ function Sidebar() {
       </ul>
 
       <div className="sign">
-        <p>By darsh ♥</p>
+        <p>
+          Created with &hearts; by <a href="https://github.com/darxh">darsh</a>
+        </p>
       </div>
     </section>
   );
