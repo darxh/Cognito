@@ -57,7 +57,6 @@
   height: 28px;
   width: 28px;
   border-radius: 50%;
-  /* background: #fff; */
   object-fit: cover;
 }
 
@@ -72,7 +71,6 @@
   display: none;
 }
 
-/* --- LIST ITEMS --- */
 .history li {
   list-style: none;
   padding: 0 0 0 14px;
@@ -104,7 +102,6 @@
   color: #fff;
 }
 
-/* --- TITLE TEXT --- */
 .thread-title {
   flex: 1;
   white-space: nowrap;
@@ -114,7 +111,6 @@
   padding-right: 5px;
 }
 
-/* --- DELETE BUTTON --- */
 .deleteBtn {
   background: transparent;
   border: none;
@@ -139,18 +135,16 @@
   color: #b4b4b4;
   transition: all 0.2s ease;
   pointer-events: none;
-  /* Hidden by default globally, shown via hover or highlight */
+
   opacity: 0;
 }
 
-/* --- MOBILE: ACTIVE CHAT ONLY --- */
 @media (max-width: 768px) {
   .sidebar {
     width: 75%;
     max-width: 280px;
   }
 
-  /* 1. Default State: Button is hidden and unclickable */
   .deleteBtn {
     pointer-events: none;
   }
@@ -158,23 +152,19 @@
     opacity: 0;
   }
 
-  /* 2. Active State: Show button ONLY on the highlighted chat */
   .history li.highlighted .deleteBtn {
-    pointer-events: auto; /* Make it clickable */
+    pointer-events: auto;
   }
   .history li.highlighted .fa-trash {
-    opacity: 1; /* Make it visible */
+    opacity: 1;
   }
 
-  /* Red color on tap for active chat */
   .deleteBtn:active .fa-trash {
     color: #f87171;
   }
 }
 
-/* --- DESKTOP: HOVER EFFECTS --- */
 @media (min-width: 769px) {
-  /* Show on Hover */
   .history li:hover .fa-trash {
     opacity: 1;
   }
@@ -183,7 +173,6 @@
     color: #f87171;
   }
 
-  /* Also show if it is the active chat (Desktop preference) */
   .history li.highlighted .fa-trash {
     opacity: 1 !important;
     color: #e0e0e0;

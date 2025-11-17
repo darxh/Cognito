@@ -1,0 +1,14 @@
+html,
+body {
+  background-color: #0f0f10;
+  overscroll-behavior: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
