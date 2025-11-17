@@ -10,7 +10,8 @@ Cognito is a full-stack AI chat platform that enables users to have intelligent 
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success)](https://cognito-01.vercel.app)
 
-![Cognito Banner](https://i.postimg.cc/Y2mn7kgS/Screenshot-2025-11-08-142744.png)
+![Cognito Banner](https://i.postimg.cc/mg3F7FpL/Screenshot_2025_11_16_160705.png)
+![Cognito Banner](https://i.postimg.cc/W4B3KNHx/Screenshot_2025_11_16_161152.png)
 
 </div>
 
@@ -20,23 +21,28 @@ Cognito is a full-stack AI chat platform that enables users to have intelligent 
 
 ## Key Features
 
-- **AI-Powered Conversations**: Integration with Google Gemini 2.5 Flash
-- **Secure Authentication**: JWT-based auth with encrypted passwords
-- **Thread Management**: Create, view, and organize multiple conversations
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
-- **Persistent Storage**: All conversations saved to the cloud
-- **Real-time Responses**: Fast API integration with loading indicators
-- **Markdown Support**: Rich text formatting with syntax-highlighted code blocks
+-   **AI-Powered Conversations**: Integration with Google Gemini 2.5 Flash.
+-   **Voice Input**: Hands-free messaging using the browser's built-in Speech Recognition API.
+-   **Secure Authentication**: JWT-based auth with encrypted passwords using Bcrypt.
+-   **Thread Management**: Create, view, delete, and organize multiple conversations.
+-   **Persistent Storage**: All conversations are saved to a MongoDB cloud database.
+-   **Dynamic Animated UI**: Features a beautiful, animated aurora background powered by WebGL (ogl).
+-   **Markdown Support**: Renders AI responses with rich text formatting and syntax-highlighted code blocks.
+-   **Real-time Responses**: Fast API integration with loading indicators from `react-spinners`.
+-   **Responsive Design**: Works seamlessly on desktop, tablet, and mobile.
 
 ---
 
 ## Tech Stack
 
 ### Frontend
-- React 19 with Vite
-- React Router for navigation
-- React Markdown for message rendering
-- Modern CSS with responsive design
+-   React 19 with Vite
+-   React Router for navigation
+-   React Markdown for message rendering
+-   **ogl**: WebGL library for the animated `DarkVeil` background.
+-   **react-spinners**: For loading animations.
+-   **uuid**: For client-side generation of new thread IDs.
+-   Modern CSS with responsive design
 
 ### Backend
 - Node.js & Express
@@ -157,18 +163,18 @@ Cognito/
 │   ├── utils/
 │   │   └── gemini.js                 # Gemini API integration
 │   ├── server.js                     # Express server setup
-│   ├── package.json
-│   └── .env
+│   ├── package.json                  # Backend dependencies
+│   └── .env                          # (Example, not uploaded)
 │
 ├── frontend/
 │   ├── src/
 │   │   ├── assets/
-│   │   │   └── blacklogo.png         # Static assets
+│   │   │   └── cognito.png           # Static assets
 │   │   ├── components/
 │   │   │   ├── AuthLayout/
-│   │   │   │   └── AuthLayout.jsx    # Wrapper for auth pages (adds background)
+│   │   │   │   └── AuthLayout.jsx    # Wrapper for auth pages
 │   │   │   ├── AuthNavbar/
-│   │   │   │   ├── AuthNavbar.jsx    # Floating navbar for auth pages
+│   │   │   │   ├── AuthNavbar.jsx    # Navbar for auth pages
 │   │   │   │   └── AuthNavbar.css    # Styles for AuthNavbar
 │   │   │   ├── Chat/
 │   │   │   │   ├── Chat.jsx          # Message display component
@@ -194,15 +200,18 @@ Cognito/
 │   │   │   └── Auth.css              # Shared authentication styles
 │   │   ├── App.jsx                   # Main app component
 │   │   ├── main.jsx                  # Entry point
-│   │   └── index.css                 # Global/Tailwind styles
+│   │   └── index.css                 # Global styles
 │   ├── public/
-│   ├── index.html                    # HTML entry point (Vite)
-│   ├── vite.config.js
+│   │   └── cognito.png               # Favicon
+│   ├── .gitignore                    # Frontend gitignore
+│   ├── eslint.config.js              # ESLint configuration
+│   ├── index.html                    # HTML entry point
+│   ├── vite.config.js                # Vite configuration
 │   ├── vercel.json                   # Vercel routing config
-│   └── package.json
+│   └── package.json                  # Frontend dependencies
 │
-├── .gitignore
-└── README.md
+├── .gitignore                        # Root gitignore
+└── README.md                         # Project documentation
 
 ```
 ---
